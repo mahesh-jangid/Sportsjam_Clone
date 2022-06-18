@@ -1,0 +1,69 @@
+.part1 {
+  margin: auto;
+  width: 70%;
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.first > input {
+  width: 50%;
+  height: 35px;
+  margin-top: 5px;
+}
+
+h6 {
+  color: grey;
+  margin-top: 3px;
+}
+
+.second {
+  width: 45%;
+  height: 65px;
+  display: flex;
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+.second > div {
+  margin-left: 10px;
+}
+
+.third {
+  width: 45%;
+  height: 180px;
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+.third > .inner1 {
+  /* border: 1px solid red; */
+  margin-left: 22px;
+  margin-top: -18px;
+}
+
+.inner2 {
+  width: 90%;
+  height: 100px;
+  display: block;
+  border: 1px solid grey;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.inner2 > input {
+  width: 200px;
+  height: 35px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.inner2 > h5 {
+  text-decoration: underline;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+}

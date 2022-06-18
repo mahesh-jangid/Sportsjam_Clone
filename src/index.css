@@ -1,0 +1,160 @@
+.nav,
+.nav a,
+.nav ul,
+.nav li,
+.nav div,
+.nav {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav li {
+  list-style: none;
+}
+
+/* Menu Container */
+ul.nav {
+  display: flex;
+  position: relative;
+  cursor: default;
+  z-index: 500;
+  width: 50%;
+  justify-content: space-around;
+}
+
+/* Menu List */
+.nav > li {
+  display: block;
+  float: left;
+}
+
+/* Menu Links */
+.nav > li > a {
+  position: relative;
+  display: block;
+  z-index: 510;
+  height: 54px;
+  padding: 0 20px;
+  line-height: 54px;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.35);
+
+  /*     
+    border-left: 1px solid #4b4441;
+    border-right: 1px solid #312a27; */
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.nav > li:hover > a {
+  border-bottom: 4px solid coral;
+}
+
+.nav > li:first-child > a {
+  border-radius: 3px 0 0 3px;
+  border-left: none;
+}
+
+/* Search Form */
+.nav > li.nav-search > form {
+  position: relative;
+  width: inherit;
+  height: 54px;
+  z-index: 510;
+  border-left: 1px solid #4b4441;
+}
+
+/* Menu Dropdown */
+.nav > li > div {
+  position: absolute;
+  display: block;
+  min-width: 100%;
+  width: 67rem;
+  top: 60px;
+  left: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+
+  background: #ffffff;
+  border-radius: 0 0 3px 3px;
+
+  -webkit-transition: all 0.3s ease 0.15s;
+  -moz-transition: all 0.3s ease 0.15s;
+  -o-transition: all 0.3s ease 0.15s;
+  -ms-transition: all 0.3s ease 0.15s;
+  transition: all 0.3s ease 0.15s;
+}
+
+.nav > li:hover > div {
+  opacity: 1;
+  visibility: visible;
+  overflow: visible;
+}
+
+/* Menu Content Styles */
+.nav .nav-column {
+  float: left;
+  width: 20%;
+  /* padding: 2.5%; */
+  margin: 1.5%;
+}
+
+.nav .nav-column h3 {
+  margin: 20px 0 10px 0;
+  line-height: 18px;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #372f2b;
+  text-transform: uppercase;
+}
+
+.nav .nav-column h3.orange {
+  color: #ff722b;
+}
+
+.nav .nav-column li a {
+  display: block;
+  line-height: 26px;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  color: #888888;
+}
+
+.nav .nav-column li a:hover {
+  color: #080707;
+}
+
+.bigcontainer {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  width: 90%;
+  text-align: start;
+  display: flex;
+  align-items: center;
+}
+
+.women-link {
+  color: #000000;
+}
+.men-link {
+  color: #000000;
+}
