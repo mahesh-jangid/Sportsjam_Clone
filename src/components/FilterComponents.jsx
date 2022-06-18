@@ -15,16 +15,15 @@ import {
   CheckboxGroup,
   VStack,
 } from "@chakra-ui/react";
-// import { useParams } from "react-router-dom";
-// import { fetchData } from "../Redux/products/action";
-// import { useDispatch } from "react-redux";
 
 const FilterComponent = () => {
   return (
     <Box>
       <Box display={{ base: "none", md: "block" }} p="1rem 2rem">
         <Text fontSize="2xl">Filters</Text>
-        <Text>Category</Text>
+        <Text mt={5} mb={4}>
+          Category
+        </Text>
 
         <CheckboxGroup mt={4}>
           <VStack alignItems={"baseline"}>

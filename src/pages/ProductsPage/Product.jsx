@@ -14,7 +14,7 @@ const Product = ({ item, handleclick }) => {
   return (
     <Box m={5}>
       <Box onClick={() => handleclick(item)}>
-        <Image src={item.img} objectFit="cover" width={"400px"} />
+        <Image src={item.img} objectFit="cover" />
         <Stack>
           <Heading fontSize={13} color={"orange.400"}>
             {item.title}{" "}

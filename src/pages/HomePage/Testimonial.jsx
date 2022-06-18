@@ -6,7 +6,7 @@ const Testimonial = () => {
     <Flex mt={4} mb={4} width="90" m={"auto"} textAlign={"center"}>
       <Box>
         <Heading>TESTIMONIALS</Heading>
-        <Text mt={3} fontSize={"15"}>
+        <Text mt={3} fontSize={"14"}>
           Amazing products and Excellent Service. Whenever I have called, I have
           got professional, prompt and consistent reply. Even during giving the
           free tshirt, you guys called to know the size, but unfortunately the

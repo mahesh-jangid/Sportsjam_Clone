@@ -1,4 +1,3 @@
-//import products from "../products";
 import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -51,54 +50,57 @@ const Products = () => {
   };
 
   return (
-    <Flex>
-      <Box mr={5}>
-        <FilterComponent />
-      </Box>
-      <Divider orientation="vertical" />
-      <Box>
-        <Stack>
-          <Flex
-            alignItems={"center"}
-            justifyContent={"space-between"}
-            width={"6xl"}
-          >
-            {" "}
-            <Heading fontSize={14}>Found {data.length} product(s)</Heading>
-            <Box>
-              <Select placeholder="Select option" onClick={handleSort}>
-                <option value="asc">Price low to high</option>
-                <option value="desc">Price high to low</option>
-                <option value="Discount">Discount</option>
-                <option value="Popularty">Popularty</option>
-              </Select>
-            </Box>
-          </Flex>
-          <Grid
-            templateColumns="repeat(4, 1fr)"
-            w={"6xl"}
-            gap={3}
-            textAlign={"center"}
-          >
-            {state
-              ? sortedData.map((elem) => {
-                  return (
-                    <>
-                      <Product item={elem} handleclick={handleclick} />
-                    </>
-                  );
-                })
-              : data.map((elem) => {
-                  return (
-                    <>
-                      <Product item={elem} handleclick={handleclick} />
-                    </>
-                  );
-                })}
-          </Grid>
-        </Stack>
-      </Box>
-    </Flex>
+    <>
+      <Flex justifyContent={"space-between"}>
+        <Box mr={5} flex={1}>
+          <FilterComponent />
+        </Box>
+        <Divider orientation="vertical" />
+        <Box flex={2}>
+          <Stack>
+            <Flex
+              alignItems={"center"}
+              justifyContent={"space-between"}
+              width={"6xl"}
+            >
+              {" "}
+              <Heading fontSize={14}>Found {data.length} product(s)</Heading>
+              <Box>
+                <Select placeholder="Select option" onClick={handleSort}>
+                  <option value="asc">Price low to high</option>
+                  <option value="desc">Price high to low</option>
+                  <option value="Discount">Discount</option>
+                  <option value="Popularty">Popularty</option>
+                </Select>
+              </Box>
+            </Flex>
+            <Grid
+              templateColumns="repeat(auto-fit, minmax(270px, 1fr))"
+              templateRows={"300px"}
+              w={"6xl"}
+              gap={3}
+              textAlign={"center"}
+            >
+              {state
+                ? sortedData.map((elem) => {
+                    return (
+                      <>
+                        <Product item={elem} handleclick={handleclick} />
+                      </>
+                    );
+                  })
+                : data.map((elem) => {
+                    return (
+                      <>
+                        <Product item={elem} handleclick={handleclick} />
+                      </>
+                    );
+                  })}
+            </Grid>
+          </Stack>
+        </Box>
+      </Flex>
+    </>
   );
 };
 export default Products;

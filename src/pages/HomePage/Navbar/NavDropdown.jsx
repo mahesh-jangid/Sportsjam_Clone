@@ -801,58 +801,37 @@ export const NavbarDropdown = () => {
         </li>
 
         <li>
-          <a href="/products">SHOES</a>
+          <a href="/products">BEAUTY</a>
           <div className="bigcontainer">
             <div className="nav-column">
-              <h3 className="orange">Spaces</h3>
+              <h3 className="orange">Makeup</h3>
               <ul>
                 <li>
-                  <a>Home Centre</a>
+                  <a>Lipstick</a>
                 </li>
                 <li>
-                  <a>Spaces</a>
+                  <a>Lip Gloss</a>
                 </li>
                 <li>
-                  <a>D'Decor</a>
+                  <a>Lip Liner</a>
                 </li>
                 <li>
-                  <a>Portico New York</a>
+                  <a>Mascara</a>
                 </li>
                 <li>
-                  <a>Pure Home & Living</a>
+                  <a>Eyeliner</a>
                 </li>
                 <li>
-                  <a>Swayam</a>
+                  <a>Kajal</a>
                 </li>
                 <li>
-                  <a>Raymond Home</a>
+                  <a>Eyeshadow</a>
                 </li>
                 <li>
-                  <a>Maspar</a>
+                  <a>Compact</a>
                 </li>
                 <li>
-                  <a>Corelle</a>
-                </li>
-                <li>
-                  <a>Trident</a>
-                </li>
-                <li>
-                  <a>Cortina</a>
-                </li>
-                <li>
-                  <a>Shrefry@Home</a>
-                </li>
-                <li>
-                  <a>Random</a>
-                </li>
-                <li>
-                  <a>Ellementry</a>
-                </li>
-                <li>
-                  <a>ROMEE</a>
-                </li>
-                <li>
-                  <a>SEJ by Nisha Gupta</a>
+                  <a>Nail Polish</a>
                 </li>
               </ul>
 
