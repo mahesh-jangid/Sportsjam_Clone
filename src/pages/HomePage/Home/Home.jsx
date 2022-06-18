@@ -1,4 +1,4 @@
-import LargeWithAppLinksAndSocial from "../../../components/Footer";
+// import LargeWithAppLinksAndSocial from "../../../components/Footer";
 import Header from "../../../components/Navbar/Header";
 import { Navbar } from "../../../components/Navbar/Navbar";
 import { Carousel } from "../Carousel";
@@ -21,7 +21,6 @@ export const Home = () => {
       <Section3 />
       <Section4 />
       <Testimonial />
-      <LargeWithAppLinksAndSocial />
     </>
   );
 };
