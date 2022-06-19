@@ -1,4 +1,5 @@
 import React from "react";
+import products from "../../Redux/products.json";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
@@ -18,8 +19,27 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import Product from "./Product";
+import Pagination from "../../components/Pagination";
 
 const Products = () => {
+  // -------------------------------------------------------------------------------------------------------------------------------------------
+  //                                                                 pagination logic
+  // const [posts, setPosts] = useState(products);
+
+  const [showPerPage, setShowPerPage] = useState(8);
+  const [pagination, setPagination] = useState({
+    start: 0,
+    end: showPerPage,
+  });
+
+  const onPaginationChange = (start, end) => {
+    setPagination({ start: start, end: end });
+  };
+  const handlechange = (value) => {
+    setShowPerPage(value);
+  };
+  console.log(showPerPage);
+  // -------------------------------------------------------------------------------------------------------------------------------------------
   const store = useSelector((state) => state);
   const data = store.products;
   const [state, setState] = useState(false);
@@ -51,8 +71,8 @@ const Products = () => {
 
   return (
     <>
-      <Flex justifyContent={"space-between"}>
-        <Box mr={5} flex={1}>
+      <Flex justifyContent={"space-between"} mb={5}>
+        <Box flex={1}>
           <FilterComponent />
         </Box>
         <Divider orientation="vertical" />
@@ -76,20 +96,22 @@ const Products = () => {
             </Flex>
             <Grid
               templateColumns="repeat(auto-fit, minmax(270px, 1fr))"
-              templateRows={"300px"}
               w={"6xl"}
               gap={3}
+              rowGap={12}
               textAlign={"center"}
             >
               {state
-                ? sortedData.map((elem) => {
-                    return (
-                      <>
-                        <Product item={elem} handleclick={handleclick} />
-                      </>
-                    );
-                  })
-                : data.map((elem) => {
+                ? sortedData
+                    .slice(pagination.start, pagination.end)
+                    .map((elem) => {
+                      return (
+                        <>
+                          <Product item={elem} handleclick={handleclick} />
+                        </>
+                      );
+                    })
+                : data.slice(pagination.start, pagination.end).map((elem) => {
                     return (
                       <>
                         <Product item={elem} handleclick={handleclick} />
@@ -100,6 +122,23 @@ const Products = () => {
           </Stack>
         </Box>
       </Flex>
+      <Divider orientation="horizontal" />
+      <Flex
+        alignItems={"center"}
+        justifyContent={"center"}
+        width={"full"}
+        m={"auto"}
+        mt={4}
+        mb={4}
+      >
+        <Pagination
+          showPerPage={showPerPage}
+          onPaginationChange={onPaginationChange}
+          handlechange={handlechange}
+          total={data.length}
+        />
+      </Flex>
+      <Divider orientation="horizontal" />
     </>
   );
 };
