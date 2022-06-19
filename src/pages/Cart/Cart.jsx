@@ -158,7 +158,16 @@ const Cart = () => {
       gst: 18,
     };
     localStorage.setItem("paymentdata", JSON.stringify(paymentdata));
-    history.push("/payment");
+    if (data.length > 0) {
+      history.push("/payment");
+    } else {
+      toast({
+        description: "Sorry there is no item in cart to buy ",
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+      });
+    }
   };
   return (
     <>

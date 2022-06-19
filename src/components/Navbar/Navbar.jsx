@@ -50,12 +50,14 @@ export const Navbar = ({ onOpen, ref }) => {
       // mb={"3"}
     >
       <Stack>
-        <Image
-          boxSize="100%"
-          objectFit="cover"
-          src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/logo.jpg"
-          alt="Logo"
-        />
+        <Link to={"/"}>
+          <Image
+            boxSize="100%"
+            objectFit="cover"
+            src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/logo.jpg"
+            alt="Logo"
+          />
+        </Link>
       </Stack>
 
       {/* <Spacer /> */}
