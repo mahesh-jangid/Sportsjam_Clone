@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { useHistory, Redirect } from "react-router-dom";
 import {
@@ -28,9 +28,11 @@ export default function Header() {
   const { logout, currentUser } = useAuth();
   console.log("current user" + currentUser);
   const history = useHistory();
+
   const LoggedUser = JSON.parse(localStorage.getItem("logged_User"));
 
-  console.log("LoggedUser", LoggedUser);
+  console.log("LoggedUser user" + LoggedUser);
+
   return (
     <>
       <Box
@@ -90,7 +92,7 @@ export default function Header() {
                     cursor={"pointer"}
                     minW={0}
                   >
-                    <Avatar size={"sm"} src={LoggedUser.user.photoURL} />
+                    <Avatar size={"sm"} src={LoggedUser?.photoURL} />
                   </MenuButton>
                   <MenuList
                     alignItems={"center"}
@@ -100,11 +102,15 @@ export default function Header() {
                   >
                     <br />
                     <Center>
-                      <Avatar size={"2xl"} src={LoggedUser.user.photoURL} />
+                      <Avatar size={"2xl"} src={LoggedUser?.photoURL} />
                     </Center>
                     <br />
                     <Center>
-                      <p>{LoggedUser.user.displayName}</p>
+                      <p>
+                        {LoggedUser?.displayName
+                          ? LoggedUser?.displayName
+                          : LoggedUser?.email}
+                      </p>
                     </Center>
                     <br />
                     <MenuDivider />
@@ -113,6 +119,7 @@ export default function Header() {
                       onClick={async (e) => {
                         e.preventDefault();
                         await logout();
+                        localStorage.removeItem("logged_User");
                         history.push("/login");
                       }}
                     >

@@ -53,15 +53,21 @@ export default function Loginpage() {
             }
             setIsSubmitting(true);
             login(email, password)
-              .then((res) => {
-                handleRedirectToOrBack();
+              .then((user) => {
+                console.log("Loginnn user", user);
+                localStorage.setItem("logged_User", JSON.stringify(user.user));
+
+                // localStorage.setItem("currentUser", user.user);
+                // handleRedirectToOrBack();
                 toast({
                   description: "Login Success",
                   status: "success",
                   duration: 4000,
                   isClosable: true,
                 });
+
                 handleRedirectToOrBack();
+                window.location.reload(false);
               })
               .catch((error) => {
                 toast({
@@ -127,11 +133,27 @@ export default function Loginpage() {
           onClick={() =>
             signInWithGoogle()
               .then((user) => {
+                console.log(user);
+                localStorage.setItem("logged_User", JSON.stringify(user.user));
+
+                toast({
+                  description: "Google login Success",
+                  status: "success",
+                  duration: 4000,
+                  isClosable: true,
+                });
+
                 handleRedirectToOrBack();
-                localStorage.setItem("logged_User", JSON.stringify(user));
-                history.push("/");
+                window.location.reload(false);
               })
-              .catch((e) => console.log(e.message))
+              .catch((error) => {
+                toast({
+                  description: error.message,
+                  status: "error",
+                  duration: 5000,
+                  isClosable: true,
+                });
+              })
           }
         >
           Sign in with Google
