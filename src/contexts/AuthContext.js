@@ -28,6 +28,7 @@ export default function AuthContextProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      console.log("USER", user);
       setCurrentUser(user ? user : null);
     });
     return () => {
@@ -36,7 +37,7 @@ export default function AuthContextProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    console.log("The user is", currentUser);
+    console.log("The user is", currentUser?.auth?.currentUser);
   }, [currentUser]);
 
   function login(email, password) {
