@@ -3,7 +3,9 @@
 ### Demo Link
 https://sportsjam-clone.vercel.app/
 
-## Build Sportsjam clone using React Redux and Chakra UI.
+### Description
+
+  Build Sportsjam clone using React Redux and Chakra UI.
 
 ## Pages:
    * Landing Page
